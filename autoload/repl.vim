@@ -91,10 +91,10 @@ function! repl#open(...)
   if s:old_shell == 'powershell'
     set shell=cmd
   endif
-  let s:id_job = terminal(command)
+  let s:id_job = termopen(command)
   let s:id_window = win_getid()
-  call s:setup()
-  call win_gotoid(current_window_id)
+  "call s:setup()
+  "call win_gotoid(current_window_id)
   let &shell=s:old_shell
   echom 'repl: opened!'
 endfunction
