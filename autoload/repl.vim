@@ -94,7 +94,7 @@ function! repl#open(...)
   let s:id_job = termopen(command)
   let s:id_window = win_getid()
   "call s:setup()
-  "call win_gotoid(current_window_id)
+  call win_gotoid(current_window_id)
   let &shell=s:old_shell
   echom 'repl: opened!'
 endfunction
