@@ -24,7 +24,7 @@ function! s:cleanup()
 endfunction
 
 function! s:setup()
-  setlocal nonumber nornu nobuflisted
+  setlocal nonumber nornu
   autocmd WinClosed <buffer> call s:cleanup()
 endfunction
 
@@ -93,7 +93,7 @@ function! repl#open(...)
   endif
   let s:id_job = termopen(command)
   let s:id_window = win_getid()
-  "call s:setup()
+  call s:setup()
   call win_gotoid(current_window_id)
   let &shell=s:old_shell
   echom 'repl: opened!'
